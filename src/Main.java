@@ -2,14 +2,22 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Application Started Successfully");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        System.out.println("SinglyLinkedList implementation");
+        SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
+        System.out.print("Values added in the singlyLinkedList are : ");
+        for(int val = 0; val < 10; val++, val++){
+            System.out.print(val+" ");
+            singlyLinkedList.insert(val);
         }
+        System.out.println();
+        singlyLinkedList.traverse();
+        System.out.println(singlyLinkedList.search(55));
+        System.out.println(singlyLinkedList.search(4));
+
+        singlyLinkedList.insertAt(99, 88);
+        System.out.println();
+        singlyLinkedList.traverse();
     }
 }
