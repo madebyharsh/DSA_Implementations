@@ -26,4 +26,31 @@ public class Utility {
         }
     }
 
+    public static void quickSort(int[] nums, int st, int ed){
+        if(st<=ed){
+            int pi = partition(nums, st, ed);
+            quickSort(nums, st, pi-1);
+            quickSort(nums, pi+1, ed);
+        }
+    }
+    public static int partition(int[] nums, int st, int ed){
+        int pi = nums[ed];
+        int i = st-1;
+        int j = st;
+        while(j<ed){
+            if(nums[j]<pi){
+                i++;
+                swap(nums, i, j);
+            }
+            j++;
+        }
+        swap(nums, i+1, j);
+        return i+1;
+    }
+    public static void swap(int[] nums, int i, int j){
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+
 }
